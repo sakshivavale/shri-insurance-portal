@@ -1,0 +1,739 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shri Insurance Services | Multi-Language Portal</title>
+    <!-- Tailwind CSS for high-end styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for professional business icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body
+    class="bg-gray-50 font-sans antialiased text-gray-900 flex flex-col min-h-screen"
+  >
+    <!-- TOP NAVIGATION BAR WITH MULTI-LANGUAGE DROPDOWN -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+      <div
+        class="max-w-7xl mx-auto px-4 md:px-6 py-4 flex flex-col sm:flex-row justify-between items-center gap-4"
+      >
+        <div
+          class="flex items-center space-x-3 cursor-pointer"
+          onclick="switchTab('home')"
+        >
+          <img
+            src="image.png"
+            alt="Shri Ganesha Logo"
+            class="h-10 w-auto object-contain"
+          />
+          <span
+            class="text-xl font-bold tracking-tight text-gray-800"
+            data-lang="brand_title"
+            >Shri Insurance Services</span
+          >
+        </div>
+
+        <div
+          class="flex flex-wrap items-center justify-center gap-4 md:gap-8 font-medium text-gray-600"
+        >
+          <button
+            onclick="switchTab('home')"
+            id="tab-home"
+            class="nav-btn text-blue-600 border-b-2 border-blue-600 pb-1 font-semibold transition"
+            data-lang="nav_home"
+          >
+            Home
+          </button>
+          <button
+            onclick="switchTab('commercial')"
+            id="tab-commercial"
+            class="nav-btn hover:text-blue-600 pb-1 transition"
+            data-lang="nav_commercial"
+          >
+            Commercial & RTO
+          </button>
+          <button
+            onclick="switchTab('calculator')"
+            id="tab-calculator"
+            class="nav-btn hover:text-blue-600 pb-1 transition"
+            data-lang="nav_calc"
+          >
+            Premium Calculator
+          </button>
+
+          <div class="relative inline-block text-left ml-2">
+            <div
+              class="flex items-center bg-gray-100 border border-gray-200 rounded-xl px-3 py-1.5 shadow-sm"
+            >
+              <i class="fa-solid fa-language text-blue-600 text-lg mr-2"></i>
+              <select
+                id="lang-selector"
+                onchange="changeLanguage(this.value)"
+                class="bg-transparent text-sm font-bold text-gray-700 outline-none cursor-pointer focus:ring-0"
+              >
+                <option value="en">English (Default)</option>
+                <option value="mr">मराठी (Marathi)</option>
+                <option value="hi">हिंदी (Hindi)</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ====== PAGE 1: HOME PAGE CONTENT ====== -->
+    <main id="content-home" class="tab-content flex-grow">
+      <!-- HERO SECTION -->
+      <header
+        class="bg-gradient-to-r from-blue-700 to-indigo-800 text-white py-20 px-6"
+      >
+        <div class="max-w-5xl mx-auto text-center space-y-6">
+          <span
+            class="bg-blue-500/30 text-blue-200 text-sm font-semibold uppercase px-4 py-1.5 rounded-full tracking-wider"
+            data-lang="hero_badge"
+            >Certified Risk & Consulting Desk</span
+          >
+          <h1
+            class="text-4xl md:text-5xl font-extrabold leading-tight"
+            data-lang="hero_title"
+          >
+            Complete Corporate & Personal Insurance Safeguards
+          </h1>
+          <p
+            class="text-lg md:text-xl text-blue-100 max-w-2xl mx-auto"
+            data-lang="hero_subtitle"
+          >
+            Providing instant quotes across all top insurance companies with
+            rapid 24-hour database activation.
+          </p>
+          <div class="pt-4">
+            <a
+              href="https://wa.me/917058103210"
+              target="_blank"
+              class="bg-green-500 hover:bg-green-600 text-white font-bold px-8 py-4 rounded-xl text-lg inline-flex items-center space-x-3 shadow-lg hover:scale-105 transition transform"
+            >
+              <i class="fa-brands fa-whatsapp text-2xl"></i>
+              <span data-lang="whatsapp_btn"
+                >Get Instant Quote on WhatsApp</span
+              >
+            </a>
+          </div>
+        </div>
+      </header>
+
+      <!-- TRUST METRICS -->
+      <section
+        class="max-w-7xl mx-auto px-6 -mt-10 grid grid-cols-1 md:grid-cols-3 gap-6 relative z-10"
+      >
+        <div
+          class="bg-white p-6 rounded-2xl shadow-xl flex items-center space-x-4 border border-gray-100"
+        >
+          <div class="bg-blue-100 p-4 rounded-xl text-blue-600">
+            <i class="fa-solid fa-bolt text-2xl"></i>
+          </div>
+          <div>
+            <h3
+              class="font-bold text-gray-800 text-lg"
+              data-lang="metric_1_title"
+            >
+              10-Minute Checkout
+            </h3>
+            <p class="text-sm text-gray-500" data-lang="metric_1_desc">
+              Zero physical paperwork friction.
+            </p>
+          </div>
+        </div>
+        <div
+          class="bg-white p-6 rounded-2xl shadow-xl flex items-center space-x-4 border border-gray-100"
+        >
+          <div class="bg-green-100 p-4 rounded-xl text-green-600">
+            <i class="fa-solid fa-cloud-arrow-up text-2xl"></i>
+          </div>
+          <div>
+            <h3
+              class="font-bold text-gray-800 text-lg"
+              data-lang="metric_2_title"
+            >
+              Online Update Under 24h
+            </h3>
+            <p class="text-sm text-gray-500" data-lang="metric_2_desc">
+              Policies reflect immediately on official portals.
+            </p>
+          </div>
+        </div>
+        <div
+          class="bg-white p-6 rounded-2xl shadow-xl flex items-center space-x-4 border border-gray-100"
+        >
+          <div class="bg-purple-100 p-4 rounded-xl text-purple-600">
+            <i class="fa-solid fa-building text-2xl"></i>
+          </div>
+          <div>
+            <h3
+              class="font-bold text-gray-800 text-lg"
+              data-lang="metric_3_title"
+            >
+              All Major Brands
+            </h3>
+            <p class="text-sm text-gray-500" data-lang="metric_3_desc">
+              Direct integration across 30+ insurers.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- RETAIL SERVICES SECTOR -->
+      <section class="py-20 max-w-7xl mx-auto px-6">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+          <h2
+            class="text-3xl font-bold text-gray-800 mb-4"
+            data-lang="retail_title"
+          >
+            Retail Safety Umbrellas
+          </h2>
+          <p class="text-gray-500" data-lang="retail_subtitle">
+            Securing your health, capital, and family longevity with optimal
+            premium structures.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <div
+            class="bg-white p-8 rounded-2xl shadow-md border border-gray-100 flex space-x-6 items-start"
+          >
+            <div class="text-blue-600">
+              <i class="fa-solid fa-heart-pulse text-4xl"></i>
+            </div>
+            <div>
+              <h3
+                class="font-bold text-xl text-gray-800 mb-2"
+                data-lang="health_title"
+              >
+                Comprehensive Health Systems
+              </h3>
+              <p
+                class="text-gray-500 text-sm leading-relaxed"
+                data-lang="health_desc"
+              >
+                Cashless hospital networks with transparent medical protection
+                to cushion against sudden critical emergencies.
+              </p>
+            </div>
+          </div>
+          <div
+            class="bg-white p-8 rounded-2xl shadow-md border border-gray-100 flex space-x-6 items-start"
+          >
+            <div class="text-blue-600">
+              <i class="fa-solid fa-umbrella text-4xl"></i>
+            </div>
+            <div>
+              <h3
+                class="font-bold text-xl text-gray-800 mb-2"
+                data-lang="life_title"
+              >
+                Life & High-Yield Term Covers
+              </h3>
+              <p
+                class="text-gray-500 text-sm leading-relaxed"
+                data-lang="life_desc"
+              >
+                Absolute corporate protection for dependents, guaranteeing
+                long-term financial peace of mind.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ====== PAGE 2: COMMERCIAL & RTO SUBPAGE ====== -->
+    <main id="content-commercial" class="tab-content flex-grow hidden">
+      <section class="py-16 bg-gray-100 border-b border-gray-200">
+        <div class="max-w-5xl mx-auto text-center px-6 space-y-4">
+          <h2
+            class="text-3xl md:text-4xl font-extrabold text-gray-800"
+            data-lang="comm_hero_title"
+          >
+            Commercial Fleet & Machinery Logistics
+          </h2>
+          <p
+            class="text-lg text-gray-600 max-w-2xl mx-auto"
+            data-lang="comm_hero_desc"
+          >
+            We specialize in minimizing risk down-time for heavy assets and
+            heavy industrial infrastructure logistics.
+          </p>
+        </div>
+      </section>
+
+      <section
+        class="py-16 max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12"
+      >
+        <div class="space-y-6">
+          <div
+            class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex space-x-4"
+          >
+            <div class="text-indigo-600 text-2xl pt-1">
+              <i class="fa-solid fa-truck-front"></i>
+            </div>
+            <div>
+              <h4
+                class="font-bold text-lg text-gray-800"
+                data-lang="truck_title"
+              >
+                Heavy Logistical Fleets (6-8 Wheelers)
+              </h4>
+              <p class="text-sm text-gray-500 mt-1" data-lang="truck_desc">
+                Custom multi-axle risk coverage across multi-state transit
+                corridors with 24/7 national breakdown support routing.
+              </p>
+            </div>
+          </div>
+          <div
+            class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex space-x-4"
+          >
+            <div class="text-indigo-600 text-2xl pt-1">
+              <i class="fa-solid fa-screwdriver-wrench"></i>
+            </div>
+            <div>
+              <h4
+                class="font-bold text-lg text-gray-800"
+                data-lang="machinery_title"
+              >
+                RTO Approved Equipment & Machinery
+              </h4>
+              <p class="text-sm text-gray-500 mt-1" data-lang="machinery_desc">
+                Asset legal protections matching official RTO structural
+                mandates for transit machinery, heavy cranes, loaders, and
+                material handlers.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="bg-gradient-to-br from-indigo-900 to-slate-900 text-white p-8 rounded-3xl flex flex-col justify-between shadow-lg"
+        >
+          <div class="space-y-4">
+            <h3 class="text-2xl font-bold" data-lang="banner_title">
+              Why Transit Downtime Kills Profit Margin
+            </h3>
+            <p
+              class="text-indigo-200 text-sm leading-relaxed"
+              data-lang="banner_desc"
+            >
+              A standard 6-wheeler truck standing idle in a garage due to slow
+              insurance paperwork creates a massive leak in operational revenue.
+              Our platform utilizes advanced API pipelines to bypass regional
+              processing delays.
+            </p>
+          </div>
+          <div
+            class="pt-6 border-t border-indigo-800 flex justify-between items-center text-xs text-indigo-300"
+          >
+            <span
+              ><i class="fa-solid fa-check text-green-400 mr-1"></i> Cashless
+              Garages</span
+            >
+            <span
+              ><i class="fa-solid fa-check text-green-400 mr-1"></i> Zero-Dep
+              Options</span
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ====== PAGE 3: PREMIUM ESTIMATOR CALCULATOR ====== -->
+    <main id="content-calculator" class="tab-content flex-grow hidden">
+      <section class="py-12 max-w-3xl mx-auto px-6">
+        <div
+          class="bg-white p-8 rounded-3xl shadow-xl border border-gray-100 space-y-6"
+        >
+          <div>
+            <h2
+              class="text-2xl font-bold text-gray-800"
+              data-lang="calc_header"
+            >
+              Smart Premium Estimator
+            </h2>
+            <p class="text-sm text-gray-500 mt-1" data-lang="calc_subheader">
+              Adjust parameters below to evaluate an instant structural premium
+              projection across our partner companies.
+            </p>
+          </div>
+
+          <!-- DROPDOWN OPTIONS UPDATED VIA DICTIONARY FOR ACCURACY -->
+          <div class="space-y-4">
+            <div>
+              <label
+                class="block text-sm font-semibold text-gray-700 mb-2"
+                data-lang="calc_label_1"
+                >Select Core Asset Category</label
+              >
+              <select
+                id="calc-category"
+                onchange="calculatePremium()"
+                class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
+              >
+                <option value="bike" id="opt-bike">
+                  Two-Wheeler Personal Vehicle
+                </option>
+                <option value="car" id="opt-car">
+                  Four-Wheeler Personal Car
+                </option>
+                <option value="commercial" id="opt-comm">
+                  Commercial Freight (6-8 Wheeler Truck)
+                </option>
+                <option value="health" id="opt-health">
+                  Family Medical Protection Plan
+                </option>
+              </select>
+            </div>
+
+            <div>
+              <label
+                class="block text-sm font-semibold text-gray-700 mb-2"
+                data-lang="calc_label_2"
+                >Estimated Insured Declared Value (IDV) / Cover Limit</label
+              >
+              <div class="flex space-x-4 items-center">
+                <input
+                  type="range"
+                  id="calc-range"
+                  min="100000"
+                  max="2500000"
+                  step="50000"
+                  value="500000"
+                  oninput="updateRangeLabel(this.value)"
+                  class="w-grow flex-grow accent-blue-600"
+                />
+                <span
+                  id="range-value"
+                  class="font-mono bg-blue-50 text-blue-700 px-4 py-1.5 rounded-lg font-bold border border-blue-100"
+                  >₹5,00,000</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="bg-gradient-to-r from-gray-900 to-slate-800 p-6 rounded-2xl text-white flex justify-between items-center shadow-inner"
+          >
+            <div>
+              <p
+                class="text-xs uppercase tracking-wider text-gray-400 font-semibold"
+                data-lang="calc_result_label"
+              >
+                Estimated Base Premium
+              </p>
+              <p
+                id="final-premium"
+                class="text-3xl font-black text-green-400 mt-1"
+              >
+                ₹12,500
+                <span class="text-xs text-gray-400 font-normal">/ year</span>
+              </p>
+            </div>
+            <a
+              href="https://wa.me/917058103210"
+              target="_blank"
+              class="bg-blue-600 hover:bg-blue-700 font-bold px-4 py-2.5 rounded-xl text-sm transition"
+              data-lang="calc_lock_btn"
+            >
+              Lock This Rate
+            </a>
+          </div>
+          <p
+            class="text-[10px] text-gray-400 text-center italic"
+            data-lang="calc_disclaimer"
+          >
+            *Final rates are dependent on Turtlemint API validation and No Claim
+            Bonus declarations.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <!-- FIXED SYSTEM FOOTER -->
+    <footer
+      class="bg-gray-900 text-gray-400 py-10 px-6 border-t border-gray-800 mt-auto"
+    >
+      <div
+        class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6"
+      >
+        <div class="space-y-1 text-center md:text-left">
+          <h4 class="text-white font-bold text-lg">Shri Insurance Services</h4>
+          <p class="text-xs text-gray-500" data-lang="footer_text">
+            Official digital POSP insurance delivery desk node.
+          </p>
+        </div>
+        <div class="flex flex-col md:flex-row items-center gap-6 text-sm">
+          <a
+            href="tel:+917058103210"
+            class="flex items-center space-x-2 text-white hover:text-blue-400 transition"
+          >
+            <i class="fa-solid fa-phone text-blue-500"></i>
+            <span>+91 7058103210</span>
+          </a>
+          <a
+            href="mailto:sujalsalunke9190@gmail.com"
+            class="flex items-center space-x-2 text-white hover:text-blue-400 transition"
+          >
+            <i class="fa-solid fa-envelope text-blue-500"></i>
+            <span>sujalsalunke9190@gmail.com</span>
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ====== TRANSLATION AND INTERACTIVE LOGIC ENGINE ====== -->
+    <script>
+      // CENTRAL DICTIONARY REPOSITORY (DATA MATRIX)
+      const dictionary = {
+        en: {
+          brand_title: "Shri Insurance Services",
+          nav_home: "Home",
+          nav_commercial: "Commercial & RTO",
+          nav_calc: "Premium Calculator",
+          hero_badge: "Certified Risk & Consulting Desk",
+          hero_title: "Complete Corporate & Personal Insurance Safeguards",
+          hero_subtitle:
+            "Providing instant quotes across all top insurance companies with rapid 24-hour database activation.",
+          whatsapp_btn: "Get Instant Quote on WhatsApp",
+          metric_1_title: "10-Minute Checkout",
+          metric_1_desc: "Zero physical paperwork friction.",
+          metric_2_title: "Online Update Under 24h",
+          metric_2_desc: "Policies reflect immediately on official portals.",
+          metric_3_title: "All Major Brands",
+          metric_3_desc: "Direct integration across 30+ insurers.",
+          retail_title: "Retail Safety Umbrellas",
+          retail_subtitle:
+            "Securing your health, capital, and family longevity with optimal premium structures.",
+          health_title: "Comprehensive Health Systems",
+          health_desc:
+            "Cashless hospital networks with transparent medical protection to cushion against sudden critical emergencies.",
+          life_title: "Life & High-Yield Term Covers",
+          life_desc:
+            "Absolute corporate protection for dependents, guaranteeing long-term financial peace of mind.",
+          comm_hero_title: "Commercial Fleet & Machinery Logistics",
+          comm_hero_desc:
+            "We specialize in minimizing risk down-time for heavy assets and heavy industrial infrastructure logistics.",
+          truck_title: "Heavy Logistical Fleets (6-8 Wheelers)",
+          truck_desc:
+            "Custom multi-axle risk coverage across multi-state transit corridors with 24/7 national breakdown support routing.",
+          machinery_title: "RTO Approved Equipment & Machinery",
+          machinery_desc:
+            "Asset legal protections matching official RTO structural mandates for transit machinery, heavy cranes, loaders, and material handlers.",
+          banner_title: "Why Transit Downtime Kills Profit Margin",
+          banner_desc:
+            "A standard 6-wheeler truck standing idle in a garage due to slow insurance paperwork creates a massive leak in operational revenue. Our platform utilizes advanced API pipelines to bypass regional processing delays.",
+          calc_header: "Smart Premium Estimator",
+          calc_subheader:
+            "Adjust parameters below to evaluate an instant structural premium projection across our partner companies.",
+          calc_label_1: "Select Core Asset Category",
+          calc_label_2: "Estimated Insured Declared Value (IDV) / Cover Limit",
+          calc_result_label: "Estimated Base Premium",
+          calc_lock_btn: "Lock This Rate",
+          calc_disclaimer:
+            "*Final rates are dependent on Turtlemint API validation and No Claim Bonus declarations.",
+          footer_text: "Official digital POSP insurance delivery desk node.",
+          opt_bike: "Two-Wheeler Personal Vehicle",
+          opt_car: "Four-Wheeler Personal Car",
+          opt_comm: "Commercial Freight (6-8 Wheeler Truck)",
+          opt_health: "Family Medical Protection Plan",
+        },
+        mr: {
+          brand_title: "श्री इन्शुरन्स सर्व्हिसेस",
+          nav_home: "मुख्यपृष्ठ",
+          nav_commercial: "कमर्शियल आणि RTO",
+          nav_calc: "प्रीमियम कॅल्क्युलेटर",
+          hero_badge: "प्रमाणित जोखीम आणि सल्लागार डेस्क",
+          hero_title: "संपूर्ण व्यावसायिक आणि वैयक्तिक विमा संरक्षण",
+          hero_subtitle:
+            "सर्व टॉप विमा कंपन्यांकडून त्वरित कोटेशन आणि २४ तासांच्या आत ऑनलाईन अपडेट.",
+          whatsapp_btn: "व्हाट्सअपवर त्वरित कोट मिळवा",
+          metric_1_title: "१० मिनिटांत पॉलिसी",
+          metric_1_desc: "कागदपत्रांचा कोणताही त्रास नाही.",
+          metric_2_title: "२४ तासांच्या आत ऑनलाईन अपडेट",
+          metric_2_desc: "पॉलिसी अधिकृत पोर्टलवर त्वरित दिसून येते.",
+          metric_3_title: "सर्व प्रमुख कंपन्या उपलब्ध",
+          metric_3_desc: "३०+ पेक्षा जास्त कंपन्यांचे पर्याय एकाच ठिकाणी.",
+          retail_title: "वैयक्तिक विमा संरक्षण",
+          retail_subtitle:
+            "उत्कृष्ट प्रीमियम दरांसह तुमचे आरोग्य, भांडवल आणि कुटुंबाचे भविष्य सुरक्षित करा.",
+          health_title: "सर्वसमावेशक आरोग्य विमा",
+          health_desc:
+            "अचानक येणाऱ्या वैद्यकीय खर्चापासून संरक्षणासाठी कॅशलेस हॉस्पिटल नेटवर्क सुविधा.",
+          life_title: "लाईफ आणि टर्म इन्शुरन्स",
+          life_desc:
+            "तुमच्या कुटुंबाच्या आर्थिक भविष्याला सुरक्षित ठेवणारे मजबूत विमा कवच.",
+          comm_hero_title: "कमर्शियल वाहने आणि आरटीओ मशिनरी",
+          comm_hero_desc:
+            "आम्ही अवजड वाहने आणि औद्योगिक मशिनरीचा विमा कमीत कमी वेळेत करून देण्यास सक्षम आहोत.",
+          truck_title: "अवजड मालवाहू वाहने (६-८ चाकी ट्रक)",
+          truck_desc:
+            "राज्यभरात २४/७ ब्रेकडाउन सपोर्टसह ६ ते ८ चाकी गाड्यांसाठी खास विमा संरक्षण.",
+          machinery_title: "RTO मंजूर उपकरणे आणि मशिनरी",
+          machinery_desc:
+            "क्रेन, लोडर्स आणि इतर आरटीओ मान्यताप्राप्त औद्योगिक यंत्रसामग्रीसाठी कायदेशीर विमा.",
+          banner_title: "गाडी उभी राहिल्याने व्यवसायाचे नुकसान का होते?",
+          banner_desc:
+            "विमा कागदपत्रांच्या विलंबाने ६-चाकी किंवा ८-चाकी गाडी गॅरेजमध्ये उभी राहिल्यास दररोज मोठे आर्थिक नुकसान होते. आमचे डिजिटल प्लॅटफॉर्म हे नुकसान टाळण्यासाठी काम करते.",
+          calc_header: "स्मार्ट प्रीमियम कॅल्क्युलेटर",
+          calc_subheader:
+            "आमच्या भागीदार कंपन्यांचे अंदाजे प्रीमियम दर पाहण्यासाठी खालील पर्याय निवडा.",
+          calc_label_1: "विम्याचा प्रकार निवडा",
+          calc_label_2: "वाहनाची अंदाजे किंमत (IDV) / विमा मर्यादा",
+          calc_result_label: "अंदाजे मूळ प्रीमियम",
+          calc_lock_btn: "हा दर निश्चित करा",
+          calc_disclaimer:
+            "*अंतिम दर टर्टलमिन (Turtlemint) API पडताळणी आणि नो क्लेम बोनस (NCB) वर अवलंबून असतील.",
+          footer_text: "अधिकृत डिजिटल POSP विमा वितरण केंद्र.",
+          opt_bike: "टू-व्हीलर (दुचाकी वाहन)",
+          opt_car: "फोर-व्हीलर (चारचाकी गाडी)",
+          opt_comm: "कमर्शियल वाहन (६-८ चाकी ट्रक)",
+          opt_health: "कुटुंब आरोग्य संरक्षण योजना",
+        },
+        hi: {
+          brand_title: "श्री इंश्योरेंस सर्विसेज",
+          nav_home: "मुख्यपृष्ठ",
+          nav_commercial: "कमर्शियल और आरटीओ",
+          nav_calc: "प्रीमियम कैलकुलेटर",
+          hero_badge: "प्रमाणित जोखिम एवं सलाहकार डेस्क",
+          hero_title: "संपूर्ण व्यावसायिक और व्यक्तिगत बीमा सुरक्षा",
+          hero_subtitle:
+            "सभी टॉप बीमा कंपनियों से तुरंत कोटेशन और २४ घंटे के भीतर ऑनलाइन अपडेट की सुविधा।",
+          whatsapp_btn: "व्हाट्सएप पर तुरंत कोट प्राप्त करें",
+          metric_1_title: "१० मिनट में पॉलिसी",
+          metric_1_desc: "कागजी कार्रवाई का कोई झंझट नहीं।",
+          metric_2_title: "२४ घंटे के भीतर ऑनलाइन अपडेट",
+          metric_2_desc: "पॉलिसी सरकारी डेटाबेस और पोर्टल पर तुरंत दिखती है।",
+          metric_3_title: "सभी प्रमुख कंपनियां",
+          metric_3_desc: "३०+ से अधिक बीमा प्रदाताओं का सीधा विकल्प।",
+          retail_title: "व्यक्तिगत सुरक्षा कवच",
+          retail_subtitle:
+            "सर्वोत्तम प्रीमियम दरों के साथ अपने स्वास्थ्य, पूंजी और परिवार का भविष्य सुरक्षित करें।",
+          health_title: "व्यापक स्वास्थ्य बीमा",
+          health_desc:
+            "अचानक आने वाले मेडिकल खर्चों से सुरक्षा के लिए कैशलेस हॉस्पिटल नेटवर्क।",
+          life_title: "लाइफ और टर्म इंश्योरेंस",
+          life_desc:
+            "आपके आश्रितों के लिए पूर्ण वित्तीय सुरक्षा और मानसिक शांति की गारंटी।",
+          comm_hero_title: "कमर्शियल वाहन और मशीनरी लॉजिस्टिक्स",
+          comm_hero_desc:
+            "हम भारी वाहनों और औद्योगिक मशीनरी के बीमा कार्यों को बिना समय गंवाए पूरा करने में माहिर हैं।",
+          truck_title: "भारी मालवाहक वाहन (६-८ पहिया ट्रक)",
+          truck_desc:
+            "सभी राज्यों में २४/७ ब्रेकडाउन सहायता के साथ भारी ट्रकों के लिए विशेष बीमा योजनाएं।",
+          machinery_title: "RTO स्वीकृत उपकरण और मशीनरी",
+          machinery_desc:
+            "क्रेन, लोडर और आरटीओ पंजीकृत औद्योगिक मशीनों के लिए कानूनी बीमा सुरक्षा।",
+          banner_title: "गाड़ी खड़ी रहने से व्यापार का नुकसान क्यों होता है?",
+          banner_desc:
+            "धीमी कागजी कार्रवाई के कारण गैरेज में खड़ी एक ६-पहिया या ८-पहिया गाड़ी व्यापार में बड़ा नुकसान लाती है। हमारा डिजिटल सिस्टम इस समस्या को तुरंत हल करता है।",
+          calc_header: "स्मार्ट प्रीमियम कैलकुलेटर",
+          calc_subheader:
+            "हमारे पार्टनर कंपनियों के प्रीमियम का अनुमान लगाने के लिए नीचे दिए गए विकल्पों को बदलें।",
+          calc_label_1: "बीमा की श्रेणी चुनें",
+          calc_label_2: "वाहन का अनुमानित मूल्य (IDV) / कवर सीमा",
+          calc_result_label: "अनुमानित मूल प्रीमियम",
+          calc_lock_btn: "यह रेट लॉक करें",
+          calc_disclaimer:
+            "*अंतिम दरें टर्टलमिन (Turtlemint) API सत्यापन और नो क्लेम बोनस घोषणाओं पर निर्भर करती हैं.",
+          footer_text: "आधिकारिक डिजिटल POSP बीमा वितरण केंद्र.",
+          opt_bike: "टू-व्हीलर (दोपहिया वाहन)",
+          opt_car: "फोर-व्हीलर (चारपहिया गाड़ी)",
+          opt_comm: "कमर्शियल वाहन (६-८ पहिया ट्रक)",
+          opt_health: "पारिवारिक स्वास्थ्य सुरक्षा योजना",
+        },
+      };
+
+      // RUNTIME LANGUAGE CONTROL ENGINE
+      function changeLanguage(langCode) {
+        // Find all DOM nodes carrying the custom key flag attribute
+        document.querySelectorAll("[data-lang]").forEach((element) => {
+          const translationKey = element.getAttribute("data-lang");
+          if (dictionary[langCode] && dictionary[langCode][translationKey]) {
+            element.innerText = dictionary[langCode][translationKey];
+          }
+        });
+
+        // Update drop-down select option texts inside the calculator specifically
+        document.getElementById("opt-bike").innerText =
+          dictionary[langCode].opt_bike;
+        document.getElementById("opt-car").innerText =
+          dictionary[langCode].opt_car;
+        document.getElementById("opt-comm").innerText =
+          dictionary[langCode].opt_comm;
+        document.getElementById("opt-health").innerText =
+          dictionary[langCode].opt_health;
+
+        // Recalculate context values to match state display rules if needed
+        calculatePremium();
+      }
+
+      // NAVIGATION TABS SWITCHING LOGIC
+      function switchTab(tabId) {
+        document.querySelectorAll(".tab-content").forEach((element) => {
+          element.classList.add("hidden");
+        });
+        document.getElementById("content-" + tabId).classList.remove("hidden");
+
+        document.querySelectorAll(".nav-btn").forEach((btn) => {
+          btn.classList.remove(
+            "text-blue-600",
+            "border-b-2",
+            "border-blue-600",
+            "font-semibold",
+          );
+        });
+        document
+          .getElementById("tab-" + tabId)
+          .classList.add(
+            "text-blue-600",
+            "border-b-2",
+            "border-blue-600",
+            "font-semibold",
+          );
+
+        if (tabId === "calculator") {
+          calculatePremium();
+        }
+      }
+
+      // PREMIUM ALGORITHMIC SIMULATOR
+      function updateRangeLabel(val) {
+        document.getElementById("range-value").innerText =
+          "₹" + parseInt(val).toLocaleString("en-IN");
+        calculatePremium();
+      }
+
+      function calculatePremium() {
+        const category = document.getElementById("calc-category").value;
+        const idv = parseFloat(document.getElementById("calc-range").value);
+        let multiplier = 0.025;
+
+        if (category === "bike") multiplier = 0.015;
+        if (category === "car") multiplier = 0.03;
+        if (category === "commercial") multiplier = 0.045;
+        if (category === "health") multiplier = 0.02;
+
+        let estimatedPremium = Math.round(idv * multiplier);
+
+        // Format dynamic numeric results consistently
+        document.getElementById("final-premium").innerHTML =
+          "₹" +
+          estimatedPremium.toLocaleString("en-IN") +
+          " <span class='text-xs text-gray-400 font-normal'>/ year</span>";
+      }
+
+      // INITIAL runtime baseline sets standard default layout markers
+      window.onload = function () {
+        changeLanguage("en"); // Enforce default configuration setup
+        updateRangeLabel(document.getElementById("calc-range").value);
+      };
+    </script>
+  </body>
+</html>
